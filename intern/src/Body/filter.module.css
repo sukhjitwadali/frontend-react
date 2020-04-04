@@ -1,0 +1,50 @@
+  .filter{
+      position: fixed;
+  }
+  
+.card-text  .react-datepicker-wrapper{
+    width: 100% ;
+
+}
+
+.wrapper{
+    width: 100%;
+    
+}
+.wrapper input{
+    width: 100%;
+    border-radius: 5px;
+}
+.filterhead{
+    text-align: center;
+    padding: 5px;
+}
+.filterhead span{
+   margin-left: 5px;
+}
+.inputheaders{
+    margin-bottom: 5px;
+} span{
+    font-size: 14px;
+    font-weight: 600;
+
+}
+
+
+.dropdown{
+    overflow: visible;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid rgb(204, 204, 204);
+    height: 35px;
+    padding: 10px;
+
+}
+
+datalist {
+	display: none;
+}
+/* specifically hide the arrow on focus */
+input::-webkit-calendar-picker-indicator {
+	display: none;
+}

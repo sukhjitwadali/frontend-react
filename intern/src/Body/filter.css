@@ -1,0 +1,33 @@
+.card-text  .react-datepicker-wrapper{
+    width: 100% !important;
+    border:none;
+    border-radius: 5px;
+
+}
+.filter_wrapper__1LdRD{
+    border: 1px solid rgb(204, 204, 204);
+    height: 35px;
+    border-radius:  5px;
+    padding: 10px;
+}
+.MuiTypography-body1{
+    font-size: 14px !important;
+    margin-left: -5px !important;
+    /* inline-size: 0em !important; */
+}
+.sidebar{
+width:260px;
+position:fixed
+
+}
+
+
+@media only screen and (max-width: 600px) {
+    .sidebar{
+         position: static;
+         width: 100%;
+
+       }
+
+     }
+   
