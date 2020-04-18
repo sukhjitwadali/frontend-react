@@ -9,7 +9,6 @@ render(){
         <div>
         <TopNavbar/>
         <Main/>
-    
     </div>
     )
 }

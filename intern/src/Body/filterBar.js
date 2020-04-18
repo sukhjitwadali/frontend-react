@@ -8,23 +8,26 @@ import './filter.css'
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { Filter } from 'react-bootstrap-icons';
+import axios from 'axios'
 
 class Filters extends React.Component{
-    constructor(props) {
+      constructor(props){
         super(props);
-        this.state = {
-          chips: []
-        }
+        
       }
-     
-      onChange = chips => {
-        this.setState({ chips });
+    
+      catOnChange = (cat_chip) => {
+        this.setState({ cat_chip });
+        this.props.selOnCatChange(cat_chip) 
+        
       }
-
+      LocOnChange = loc_chip =>{
+        this.setState({loc_chip})
+        this.props.selOnCatChange(loc_chip)
+      }
       state = {
         startDate: new Date()
       };
-     
       handleChange = date => {
         this.setState({
           startDate: date
@@ -33,26 +36,29 @@ class Filters extends React.Component{
 
     render(){
         return (
+          <div>
             <Card ClassName = {styles.filter}>
             <Card.Body>
               <Card.Title> <div className={styles.filterhead}><Filter></Filter><span>Filters</span></div></Card.Title>
 
               <Card.Text>
                  <div className={styles.inputheaders}> <span >Category</span></div>
-              <Chips
-          value={this.state.chips}
-          onChange={this.onChange}
-          suggestions={["Your", "You", "Here"]}
+              <Chips ClassName={styles.chips}
+          value={this.state.cat_chip}
+          
+          onChange={this.catOnChange}
+          suggestions={this.props.cat_list}
         />
               </Card.Text>
               <Card.Text>
               <span>Location</span>
               <Chips
-          value={this.state.chips}
-          onChange={this.onChange}
-          suggestions={["Your", "You", "Here"]}
-        />
-               
+          value={this.state.loc_chip}
+          onChange={this.LocOnChange}
+          suggestions={this.props.location_list}
+          alwaysRenderSuggestions={true}
+          focusInputOnSuggestionClick={true}
+        />    
               </Card.Text>
               <div className={styles.inputheaders}>
                 <span className={styles.inputheaders }>Starting from (or after)</span>
@@ -118,6 +124,7 @@ class Filters extends React.Component{
               <Card.Link href="#">Another Link</Card.Link>
             </Card.Body> */}
           </Card>
+          </div>
     
         )
 

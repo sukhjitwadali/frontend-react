@@ -20,7 +20,6 @@ class Login extends React.Component {
 	changeHandler = e => {
 		this.setState({ [e.target.name]: e.target.value })
 	}
-
 	submitHandler = e =>{
 		e.preventDefault()
 		console.log(this.state)
@@ -35,7 +34,6 @@ class Login extends React.Component {
 render(){
 		const { email, password } = this.state
   return (
-	  
 		<Form onSubmit={this.submitHandler} className = {styles.topspace} >
 	   <div className= {styles.logininputs}>
 		<Form.Group controlId="formBasicEmail">
